@@ -69,12 +69,19 @@
     <Compile Include="Controller\UC_dataSewa.Designer.cs">
       <DependentUpon>UC_dataSewa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\UC_inputDataMobil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controller\UC_inputDataMobil.Designer.cs">
+      <DependentUpon>UC_inputDataMobil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controller\UC_inputPelanggan.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controller\UC_inputPelanggan.Designer.cs">
       <DependentUpon>UC_inputPelanggan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Pelanggan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Frm_login.cs">
@@ -97,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controller\UC_dataSewa.resx">
       <DependentUpon>UC_dataSewa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controller\UC_inputDataMobil.resx">
+      <DependentUpon>UC_inputDataMobil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controller\UC_inputPelanggan.resx">
       <DependentUpon>UC_inputPelanggan.cs</DependentUpon>
@@ -131,9 +141,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Img\Pelanggan.png" />
   </ItemGroup>

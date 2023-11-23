@@ -28,6 +28,7 @@ namespace RENTAL_MOBIL
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+
            
             String username, user_password;
 
@@ -36,7 +37,7 @@ namespace RENTAL_MOBIL
 
             try
             {
-                string querry = "SELECT * FROM tbl_login WHERE username = '"+txtNama.Text+"' AND password = '"+txtPassword.Text+"'";
+                string querry = "SELECT * FROM Tbl_LoginKaryawan WHERE username = '"+txtNama.Text+"' AND password = '"+txtPassword.Text+"'";
                 //string querry = "SELECT * FROM Tbl_login WHERE username = @username AND password = CONVERT(@password AS varchar(50))";
                 //SqlCommand cmd = new SqlCommand(querry,conn);
 
@@ -86,7 +87,6 @@ namespace RENTAL_MOBIL
         {
             txtNama.Clear();
             txtPassword.Clear();
-
             txtNama.Focus();    
         }
 

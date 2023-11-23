@@ -16,3 +16,4 @@ D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Deb
 D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL_MOBIL.Controller.UC_inputPelanggan.resources
 D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL_MOBIL.Controller.UC_dataSewa.resources
 D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL_MOBIL.Controller.UC_dataPelanggan.resources
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL_MOBIL.Controller.UC_inputDataMobil.resources
