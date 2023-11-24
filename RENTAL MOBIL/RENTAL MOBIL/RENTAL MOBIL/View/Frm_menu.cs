@@ -14,7 +14,7 @@ namespace RENTAL_MOBIL.View
     public partial class Frm_menu : Form
     {
         Controller.UC_inputPelanggan ucPelanggan = new Controller.UC_inputPelanggan();
-        Controller.UC_dataMobil ucDatamobil = new Controller.UC_dataMobil();
+        //Controller.UC_dataMobil ucDatamobil = new Controller.UC_dataMobil();
         Controller.UC_dataSewa ucDatasewa = new Controller.UC_dataSewa();
         Controller.UC_dataPelanggan ucDatapelanggan = new Controller.UC_dataPelanggan();
         Controller.UC_inputDataMobil uc_InputDataMobil = new Controller.UC_inputDataMobil();
@@ -47,13 +47,13 @@ namespace RENTAL_MOBIL.View
             ucPelanggan.Dock = DockStyle.Fill;
         }
 
-        private void btn_dataMobil_Click(object sender, EventArgs e)
+       /* private void btn_dataMobil_Click(object sender, EventArgs e)
         {
             lbl_judul.Text = "data mobil";
             panel3.Controls.Clear();
             panel3.Controls.Add(ucDatamobil);
-            ucPelanggan.Dock = DockStyle.Fill;
-        }
+            ucDatamobil.Dock = DockStyle.Fill;
+        }*/
 
         private void btnSewa_Click(object sender, EventArgs e)
         {

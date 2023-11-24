@@ -17,6 +17,14 @@ namespace RENTAL_MOBIL.Controller
             InitializeComponent();
         }
 
-        
+        private void lbl_Rincian_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lvw_ricianSewa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

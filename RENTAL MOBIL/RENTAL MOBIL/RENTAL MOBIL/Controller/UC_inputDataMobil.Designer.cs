@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Lvw_dataMobil = new System.Windows.Forms.ListView();
+            this.btn_LoadDtmobil = new System.Windows.Forms.Button();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.btn_editDataMbl = new System.Windows.Forms.Button();
+            this.btn_DeleteMbl = new System.Windows.Forms.Button();
             this.lbl_PerHari = new System.Windows.Forms.Label();
             this.txt_MerekMobil = new System.Windows.Forms.TextBox();
             this.btn_saveData = new System.Windows.Forms.Button();
@@ -48,6 +53,11 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.Lvw_dataMobil);
+            this.panel1.Controls.Add(this.btn_LoadDtmobil);
+            this.panel1.Controls.Add(this.btn_Cancel);
+            this.panel1.Controls.Add(this.btn_editDataMbl);
+            this.panel1.Controls.Add(this.btn_DeleteMbl);
             this.panel1.Controls.Add(this.lbl_PerHari);
             this.panel1.Controls.Add(this.txt_MerekMobil);
             this.panel1.Controls.Add(this.btn_saveData);
@@ -60,11 +70,85 @@
             this.panel1.Controls.Add(this.lbl_gender);
             this.panel1.Controls.Add(this.lbl_platNomer);
             this.panel1.Controls.Add(this.lbl_idMobil);
-            this.panel1.Location = new System.Drawing.Point(23, 33);
+            this.panel1.Location = new System.Drawing.Point(22, 21);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.panel1.Size = new System.Drawing.Size(637, 389);
+            this.panel1.Size = new System.Drawing.Size(637, 648);
             this.panel1.TabIndex = 1;
+            // 
+            // Lvw_dataMobil
+            // 
+            this.Lvw_dataMobil.HideSelection = false;
+            this.Lvw_dataMobil.Location = new System.Drawing.Point(24, 355);
+            this.Lvw_dataMobil.Name = "Lvw_dataMobil";
+            this.Lvw_dataMobil.Size = new System.Drawing.Size(593, 275);
+            this.Lvw_dataMobil.TabIndex = 25;
+            this.Lvw_dataMobil.UseCompatibleStateImageBehavior = false;
+            this.Lvw_dataMobil.SelectedIndexChanged += new System.EventHandler(this.Lvw_dataMobil_SelectedIndexChanged);
+            // 
+            // btn_LoadDtmobil
+            // 
+            this.btn_LoadDtmobil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_LoadDtmobil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_LoadDtmobil.FlatAppearance.BorderSize = 0;
+            this.btn_LoadDtmobil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_LoadDtmobil.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_LoadDtmobil.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_LoadDtmobil.Location = new System.Drawing.Point(27, 293);
+            this.btn_LoadDtmobil.Name = "btn_LoadDtmobil";
+            this.btn_LoadDtmobil.Size = new System.Drawing.Size(97, 42);
+            this.btn_LoadDtmobil.TabIndex = 24;
+            this.btn_LoadDtmobil.Text = "Load Data";
+            this.btn_LoadDtmobil.UseVisualStyleBackColor = false;
+            this.btn_LoadDtmobil.Click += new System.EventHandler(this.btn_LoadDtmobil_Click);
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.BackColor = System.Drawing.Color.Silver;
+            this.btn_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Cancel.FlatAppearance.BorderSize = 0;
+            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Cancel.Location = new System.Drawing.Point(148, 293);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(93, 42);
+            this.btn_Cancel.TabIndex = 23;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.UseVisualStyleBackColor = false;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            // 
+            // btn_editDataMbl
+            // 
+            this.btn_editDataMbl.BackColor = System.Drawing.Color.Yellow;
+            this.btn_editDataMbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_editDataMbl.FlatAppearance.BorderSize = 0;
+            this.btn_editDataMbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_editDataMbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editDataMbl.ForeColor = System.Drawing.Color.White;
+            this.btn_editDataMbl.Location = new System.Drawing.Point(388, 293);
+            this.btn_editDataMbl.Name = "btn_editDataMbl";
+            this.btn_editDataMbl.Size = new System.Drawing.Size(93, 42);
+            this.btn_editDataMbl.TabIndex = 22;
+            this.btn_editDataMbl.Text = "Edit Data";
+            this.btn_editDataMbl.UseVisualStyleBackColor = false;
+            this.btn_editDataMbl.Click += new System.EventHandler(this.btn_editDataMbl_Click);
+            // 
+            // btn_DeleteMbl
+            // 
+            this.btn_DeleteMbl.BackColor = System.Drawing.Color.Red;
+            this.btn_DeleteMbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_DeleteMbl.FlatAppearance.BorderSize = 0;
+            this.btn_DeleteMbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DeleteMbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DeleteMbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_DeleteMbl.Location = new System.Drawing.Point(271, 293);
+            this.btn_DeleteMbl.Name = "btn_DeleteMbl";
+            this.btn_DeleteMbl.Size = new System.Drawing.Size(97, 42);
+            this.btn_DeleteMbl.TabIndex = 20;
+            this.btn_DeleteMbl.Text = "Delete";
+            this.btn_DeleteMbl.UseVisualStyleBackColor = false;
+            this.btn_DeleteMbl.Click += new System.EventHandler(this.btn_DeleteMbl_Click);
             // 
             // lbl_PerHari
             // 
@@ -93,7 +177,7 @@
             this.btn_saveData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_saveData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_saveData.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btn_saveData.Location = new System.Drawing.Point(499, 293);
+            this.btn_saveData.Location = new System.Drawing.Point(504, 293);
             this.btn_saveData.Name = "btn_saveData";
             this.btn_saveData.Size = new System.Drawing.Size(101, 42);
             this.btn_saveData.TabIndex = 14;
@@ -117,7 +201,7 @@
             this.txt_HargaSewa.Location = new System.Drawing.Point(186, 234);
             this.txt_HargaSewa.Multiline = true;
             this.txt_HargaSewa.Name = "txt_HargaSewa";
-            this.txt_HargaSewa.Size = new System.Drawing.Size(385, 27);
+            this.txt_HargaSewa.Size = new System.Drawing.Size(210, 27);
             this.txt_HargaSewa.TabIndex = 10;
             // 
             // txt_Warna
@@ -192,10 +276,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(0, 672);
             this.Controls.Add(this.panel1);
             this.Name = "UC_inputDataMobil";
-            this.Size = new System.Drawing.Size(676, 560);
+            this.Size = new System.Drawing.Size(625, 561);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -217,5 +302,10 @@
         private System.Windows.Forms.Label lbl_idMobil;
         private System.Windows.Forms.TextBox txt_MerekMobil;
         private System.Windows.Forms.Label lbl_PerHari;
+        private System.Windows.Forms.Button btn_DeleteMbl;
+        private System.Windows.Forms.Button btn_editDataMbl;
+        private System.Windows.Forms.Button btn_Cancel;
+        private System.Windows.Forms.Button btn_LoadDtmobil;
+        private System.Windows.Forms.ListView Lvw_dataMobil;
     }
 }

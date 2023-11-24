@@ -33,10 +33,13 @@
             this.lbl_warna = new System.Windows.Forms.Label();
             this.Lvw_dataMobil = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_LoadDtPelanggan = new System.Windows.Forms.Button();
+            this.btn_LoadDtmobil = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btn_DeleteMbl = new System.Windows.Forms.Button();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.btn_editDataMbl = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +47,7 @@
             // 
             this.lbl_merekMbl.AutoSize = true;
             this.lbl_merekMbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_merekMbl.Location = new System.Drawing.Point(48, 21);
+            this.lbl_merekMbl.Location = new System.Drawing.Point(21, 21);
             this.lbl_merekMbl.Name = "lbl_merekMbl";
             this.lbl_merekMbl.Size = new System.Drawing.Size(97, 20);
             this.lbl_merekMbl.TabIndex = 0;
@@ -54,7 +57,7 @@
             // 
             this.lbl_jenisMbl.AutoSize = true;
             this.lbl_jenisMbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_jenisMbl.Location = new System.Drawing.Point(48, 52);
+            this.lbl_jenisMbl.Location = new System.Drawing.Point(21, 53);
             this.lbl_jenisMbl.Name = "lbl_jenisMbl";
             this.lbl_jenisMbl.Size = new System.Drawing.Size(88, 20);
             this.lbl_jenisMbl.TabIndex = 1;
@@ -64,7 +67,7 @@
             // 
             this.lbl_warna.AutoSize = true;
             this.lbl_warna.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_warna.Location = new System.Drawing.Point(48, 85);
+            this.lbl_warna.Location = new System.Drawing.Point(21, 84);
             this.lbl_warna.Name = "lbl_warna";
             this.lbl_warna.Size = new System.Drawing.Size(54, 20);
             this.lbl_warna.TabIndex = 2;
@@ -73,7 +76,7 @@
             // Lvw_dataMobil
             // 
             this.Lvw_dataMobil.HideSelection = false;
-            this.Lvw_dataMobil.Location = new System.Drawing.Point(16, 113);
+            this.Lvw_dataMobil.Location = new System.Drawing.Point(16, 168);
             this.Lvw_dataMobil.Name = "Lvw_dataMobil";
             this.Lvw_dataMobil.Size = new System.Drawing.Size(579, 275);
             this.Lvw_dataMobil.TabIndex = 3;
@@ -82,7 +85,10 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btn_LoadDtPelanggan);
+            this.panel1.Controls.Add(this.btn_editDataMbl);
+            this.panel1.Controls.Add(this.btn_Cancel);
+            this.panel1.Controls.Add(this.btn_DeleteMbl);
+            this.panel1.Controls.Add(this.btn_LoadDtmobil);
             this.panel1.Controls.Add(this.Lvw_dataMobil);
             this.panel1.Controls.Add(this.comboBox3);
             this.panel1.Controls.Add(this.comboBox2);
@@ -92,24 +98,24 @@
             this.panel1.Controls.Add(this.lbl_jenisMbl);
             this.panel1.Location = new System.Drawing.Point(42, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(612, 406);
+            this.panel1.Size = new System.Drawing.Size(612, 463);
             this.panel1.TabIndex = 4;
             // 
-            // btn_LoadDtPelanggan
+            // btn_LoadDtmobil
             // 
-            this.btn_LoadDtPelanggan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_LoadDtPelanggan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_LoadDtPelanggan.FlatAppearance.BorderSize = 0;
-            this.btn_LoadDtPelanggan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_LoadDtPelanggan.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_LoadDtPelanggan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_LoadDtPelanggan.Location = new System.Drawing.Point(511, 78);
-            this.btn_LoadDtPelanggan.Name = "btn_LoadDtPelanggan";
-            this.btn_LoadDtPelanggan.Size = new System.Drawing.Size(84, 29);
-            this.btn_LoadDtPelanggan.TabIndex = 15;
-            this.btn_LoadDtPelanggan.Text = "Load Data";
-            this.btn_LoadDtPelanggan.UseVisualStyleBackColor = false;
-            this.btn_LoadDtPelanggan.Click += new System.EventHandler(this.btn_LoadDtPelanggan_Click);
+            this.btn_LoadDtmobil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_LoadDtmobil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_LoadDtmobil.FlatAppearance.BorderSize = 0;
+            this.btn_LoadDtmobil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_LoadDtmobil.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_LoadDtmobil.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_LoadDtmobil.Location = new System.Drawing.Point(501, 86);
+            this.btn_LoadDtmobil.Name = "btn_LoadDtmobil";
+            this.btn_LoadDtmobil.Size = new System.Drawing.Size(97, 42);
+            this.btn_LoadDtmobil.TabIndex = 15;
+            this.btn_LoadDtmobil.Text = "Load Data";
+            this.btn_LoadDtmobil.UseVisualStyleBackColor = false;
+            this.btn_LoadDtmobil.Click += new System.EventHandler(this.btn_LoadDtPelanggan_Click);
             // 
             // comboBox3
             // 
@@ -134,6 +140,52 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 3;
+            // 
+            // btn_DeleteMbl
+            // 
+            this.btn_DeleteMbl.BackColor = System.Drawing.Color.Red;
+            this.btn_DeleteMbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_DeleteMbl.FlatAppearance.BorderSize = 0;
+            this.btn_DeleteMbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DeleteMbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DeleteMbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_DeleteMbl.Location = new System.Drawing.Point(386, 86);
+            this.btn_DeleteMbl.Name = "btn_DeleteMbl";
+            this.btn_DeleteMbl.Size = new System.Drawing.Size(97, 42);
+            this.btn_DeleteMbl.TabIndex = 19;
+            this.btn_DeleteMbl.Text = "Delete";
+            this.btn_DeleteMbl.UseVisualStyleBackColor = false;
+            this.btn_DeleteMbl.Click += new System.EventHandler(this.btn_DeleteMbl_Click);
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.BackColor = System.Drawing.Color.Silver;
+            this.btn_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Cancel.FlatAppearance.BorderSize = 0;
+            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Cancel.Location = new System.Drawing.Point(386, 23);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(93, 42);
+            this.btn_Cancel.TabIndex = 20;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.UseVisualStyleBackColor = false;
+            // 
+            // btn_editDataMbl
+            // 
+            this.btn_editDataMbl.BackColor = System.Drawing.Color.Yellow;
+            this.btn_editDataMbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_editDataMbl.FlatAppearance.BorderSize = 0;
+            this.btn_editDataMbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_editDataMbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editDataMbl.ForeColor = System.Drawing.Color.White;
+            this.btn_editDataMbl.Location = new System.Drawing.Point(501, 23);
+            this.btn_editDataMbl.Name = "btn_editDataMbl";
+            this.btn_editDataMbl.Size = new System.Drawing.Size(93, 42);
+            this.btn_editDataMbl.TabIndex = 21;
+            this.btn_editDataMbl.Text = "Edit Data";
+            this.btn_editDataMbl.UseVisualStyleBackColor = false;
             // 
             // UC_dataMobil
             // 
@@ -160,6 +212,9 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btn_LoadDtPelanggan;
+        private System.Windows.Forms.Button btn_LoadDtmobil;
+        private System.Windows.Forms.Button btn_DeleteMbl;
+        private System.Windows.Forms.Button btn_Cancel;
+        private System.Windows.Forms.Button btn_editDataMbl;
     }
 }

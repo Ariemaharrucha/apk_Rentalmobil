@@ -93,7 +93,7 @@
             this.btn_InputDataMbl.Name = "btn_InputDataMbl";
             this.btn_InputDataMbl.Size = new System.Drawing.Size(192, 38);
             this.btn_InputDataMbl.TabIndex = 2;
-            this.btn_InputDataMbl.Text = "Iput Data mobil";
+            this.btn_InputDataMbl.Text = "Data mobil";
             this.btn_InputDataMbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_InputDataMbl.UseVisualStyleBackColor = false;
             this.btn_InputDataMbl.Click += new System.EventHandler(this.btn_InputDataMbl_Click);
@@ -137,7 +137,7 @@
             this.btnDatapelanggan.ForeColor = System.Drawing.Color.White;
             this.btnDatapelanggan.Image = ((System.Drawing.Image)(resources.GetObject("btnDatapelanggan.Image")));
             this.btnDatapelanggan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDatapelanggan.Location = new System.Drawing.Point(0, 266);
+            this.btnDatapelanggan.Location = new System.Drawing.Point(0, 223);
             this.btnDatapelanggan.Name = "btnDatapelanggan";
             this.btnDatapelanggan.Size = new System.Drawing.Size(192, 38);
             this.btnDatapelanggan.TabIndex = 3;
@@ -155,7 +155,7 @@
             this.btnSewa.ForeColor = System.Drawing.Color.White;
             this.btnSewa.Image = ((System.Drawing.Image)(resources.GetObject("btnSewa.Image")));
             this.btnSewa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSewa.Location = new System.Drawing.Point(0, 223);
+            this.btnSewa.Location = new System.Drawing.Point(0, 179);
             this.btnSewa.Name = "btnSewa";
             this.btnSewa.Size = new System.Drawing.Size(192, 38);
             this.btnSewa.TabIndex = 2;
@@ -173,14 +173,14 @@
             this.btn_dataMobil.ForeColor = System.Drawing.Color.White;
             this.btn_dataMobil.Image = ((System.Drawing.Image)(resources.GetObject("btn_dataMobil.Image")));
             this.btn_dataMobil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_dataMobil.Location = new System.Drawing.Point(0, 179);
+            this.btn_dataMobil.Location = new System.Drawing.Point(-3, 385);
             this.btn_dataMobil.Name = "btn_dataMobil";
             this.btn_dataMobil.Size = new System.Drawing.Size(192, 38);
             this.btn_dataMobil.TabIndex = 1;
-            this.btn_dataMobil.Text = "Data mobil";
+            this.btn_dataMobil.Text = "Data mobil jgn Click";
             this.btn_dataMobil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_dataMobil.UseVisualStyleBackColor = false;
-            this.btn_dataMobil.Click += new System.EventHandler(this.btn_dataMobil_Click);
+            
             // 
             // panel2
             // 

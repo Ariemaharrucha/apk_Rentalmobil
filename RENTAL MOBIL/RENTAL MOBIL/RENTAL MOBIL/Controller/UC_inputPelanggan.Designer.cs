@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_DeletePelanggan = new System.Windows.Forms.Button();
+            this.btn_Cancel = new System.Windows.Forms.Button();
             this.lvwDataPelanggan = new System.Windows.Forms.ListView();
             this.btn_LoadDtPelanggan = new System.Windows.Forms.Button();
             this.comboBox_Gender = new System.Windows.Forms.ComboBox();
@@ -43,8 +45,6 @@
             this.lbl_gender = new System.Windows.Forms.Label();
             this.lbl_idPelanggan = new System.Windows.Forms.Label();
             this.lbl_namaPelanggan = new System.Windows.Forms.Label();
-            this.btn_Cancel = new System.Windows.Forms.Button();
-            this.btn_DeletePelanggan = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,38 @@
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel1.Size = new System.Drawing.Size(627, 627);
             this.panel1.TabIndex = 0;
+            // 
+            // btn_DeletePelanggan
+            // 
+            this.btn_DeletePelanggan.BackColor = System.Drawing.Color.Red;
+            this.btn_DeletePelanggan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_DeletePelanggan.FlatAppearance.BorderSize = 0;
+            this.btn_DeletePelanggan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DeletePelanggan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DeletePelanggan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_DeletePelanggan.Location = new System.Drawing.Point(253, 293);
+            this.btn_DeletePelanggan.Name = "btn_DeletePelanggan";
+            this.btn_DeletePelanggan.Size = new System.Drawing.Size(97, 42);
+            this.btn_DeletePelanggan.TabIndex = 18;
+            this.btn_DeletePelanggan.Text = "Delete";
+            this.btn_DeletePelanggan.UseVisualStyleBackColor = false;
+            this.btn_DeletePelanggan.Click += new System.EventHandler(this.btn_DeletePelanggan_Click);
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.BackColor = System.Drawing.Color.Silver;
+            this.btn_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Cancel.FlatAppearance.BorderSize = 0;
+            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Cancel.Location = new System.Drawing.Point(141, 293);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(93, 42);
+            this.btn_Cancel.TabIndex = 17;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.UseVisualStyleBackColor = false;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // lvwDataPelanggan
             // 
@@ -230,38 +262,6 @@
             this.lbl_namaPelanggan.TabIndex = 0;
             this.lbl_namaPelanggan.Text = "Nama Pelanggan";
             // 
-            // btn_Cancel
-            // 
-            this.btn_Cancel.BackColor = System.Drawing.Color.Silver;
-            this.btn_Cancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Cancel.FlatAppearance.BorderSize = 0;
-            this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Cancel.Location = new System.Drawing.Point(141, 293);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(93, 42);
-            this.btn_Cancel.TabIndex = 17;
-            this.btn_Cancel.Text = "Cancel";
-            this.btn_Cancel.UseVisualStyleBackColor = false;
-            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
-            // 
-            // btn_DeletePelanggan
-            // 
-            this.btn_DeletePelanggan.BackColor = System.Drawing.Color.Red;
-            this.btn_DeletePelanggan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_DeletePelanggan.FlatAppearance.BorderSize = 0;
-            this.btn_DeletePelanggan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_DeletePelanggan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DeletePelanggan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_DeletePelanggan.Location = new System.Drawing.Point(253, 293);
-            this.btn_DeletePelanggan.Name = "btn_DeletePelanggan";
-            this.btn_DeletePelanggan.Size = new System.Drawing.Size(97, 42);
-            this.btn_DeletePelanggan.TabIndex = 18;
-            this.btn_DeletePelanggan.Text = "Delete";
-            this.btn_DeletePelanggan.UseVisualStyleBackColor = false;
-            this.btn_DeletePelanggan.Click += new System.EventHandler(this.btn_DeletePelanggan_Click);
-            // 
             // UC_inputPelanggan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,7 +271,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.panel1);
             this.Name = "UC_inputPelanggan";
-            this.Size = new System.Drawing.Size(659, 612);
+            this.Size = new System.Drawing.Size(642, 595);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

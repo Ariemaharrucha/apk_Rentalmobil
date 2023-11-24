@@ -21,8 +21,6 @@ namespace RENTAL_MOBIL.Controller
 
         
 
-        
-
         private void UC_dataMobil_Load(object sender, EventArgs e)
         {
 
@@ -75,6 +73,75 @@ namespace RENTAL_MOBIL.Controller
             Lvw_dataMobil.Columns.Add("Merek", 80, HorizontalAlignment.Center);
             Lvw_dataMobil.Columns.Add("Warna", 120, HorizontalAlignment.Center);
             Lvw_dataMobil.Columns.Add("Harga Sewa", 160, HorizontalAlignment.Center);
+        }
+
+
+
+        private void btn_DeleteMbl_Click(object sender, EventArgs e)
+        {
+            // Menampilkan konfirmasi kepada pengguna
+            DialogResult dialogResult = MessageBox.Show("Apakah Anda yakin ingin menghapus data Mobil ini?", "Konfirmasi Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                // Jika pengguna memilih 'Yes', maka lanjutkan dengan penghapusan
+                var result = 0;
+
+                SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-D1LC3JE\SQLEXPRESS;Initial Catalog=Rental_mobil;Integrated Security=True");
+
+                conn.Open();
+
+                string sql = @"DELETE from Tbl_mobil where Id_mobil =@Id_mobil";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                try
+                {
+                    /*cmd.Parameters.AddWithValue(@"Id_mobil", txt_IdMobil.Text);
+                    cmd.Parameters.AddWithValue(@"Plat_nomer", txt_PlatNomer.Text);
+                    cmd.Parameters.AddWithValue(@"Merek", txt_MerekMobil.Text);
+                    cmd.Parameters.AddWithValue(@"Warna", txt_Warna.Text);
+                    cmd.Parameters.AddWithValue(@"Harga_sewa", int.Parse(txt_HargaSewa.Text));*/
+
+                    if (Lvw_dataMobil.SelectedItems.Count > 0)
+                    {
+                        string selectedIdMobil = Lvw_dataMobil.SelectedItems[0].SubItems[1].Text;
+                        cmd.Parameters.AddWithValue("@Id_mobil", selectedIdMobil);
+                    }
+
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    cmd.Dispose();
+                }
+
+                if (result > 0)
+                {
+                    MessageBox.Show("Data pelanggan berhasil dihapus.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Membersihkan input setelah penghapusan
+                    /*txt_NamaPelanggan.Clear();
+                    txt_IdPelanggan.Clear();
+                    comboBox_Gender.Text = "";
+                    txt_Alamat.Clear();
+                    txt_nikKtp.Clear();*/
+                }
+                else
+                {
+                    MessageBox.Show("Data pelanggan gagal dihapus.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                conn.Dispose();
+            }
+            else
+            {
+                // Jika pengguna memilih 'No', tidak melakukan apa-apa
+            }
         }
     }
 }
