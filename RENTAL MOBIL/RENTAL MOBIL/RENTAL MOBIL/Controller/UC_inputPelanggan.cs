@@ -15,13 +15,13 @@ namespace RENTAL_MOBIL.Controller
     public partial class UC_inputPelanggan : UserControl
     {
 
-
-
         public UC_inputPelanggan()
         {
             InitializeComponent();
             DataPelangganListView();
             lvwDataPelanggan.SelectedIndexChanged += lvwDataPelanggan_SelectedIndexChanged;
+
+            btn_editData.Enabled = false;
         }
       
         private void btn_saveData_Click(object sender, EventArgs e)
@@ -64,11 +64,18 @@ namespace RENTAL_MOBIL.Controller
                 return;
             }
 
+            if (String.IsNullOrEmpty(txt_NoTelepon.Text))
+            {
+                MessageBox.Show("Nama pelanggan harus diisi !!!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_NoTelepon.Focus();
+                return;
+            }
+
             SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-D1LC3JE\SQLEXPRESS;Initial Catalog=Rental_mobil;Integrated Security=True");
 
             conn.Open();
 
-            string sql = @"insert into Tbl_Pelanggan (Id_pelanggan,Nama_pelanggan,Gender,Alamat,Nik_ktp) VALUES (@Id_pelanggan,@Nama_pelanggan,@Gender,@Alamat,@Nik_ktp)";
+            string sql = @"insert into Tbl_Pelanggan (Id_pelanggan,Nama_pelanggan,Gender,Alamat,Nik_ktp,No_telepon) VALUES (@Id_pelanggan,@Nama_pelanggan,@Gender,@Alamat,@Nik_ktp,@No_telepon)";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -81,6 +88,7 @@ namespace RENTAL_MOBIL.Controller
                 cmd.Parameters.AddWithValue(@"Gender", comboBox_Gender.Text);
                 cmd.Parameters.AddWithValue(@"Alamat", txt_Alamat.Text);
                 cmd.Parameters.AddWithValue(@"Nik_ktp", txt_nikKtp.Text);
+                cmd.Parameters.AddWithValue(@"No_telepon", Int64.Parse(txt_NoTelepon.Text));
 
                 result = cmd.ExecuteNonQuery();
             }
@@ -104,6 +112,7 @@ namespace RENTAL_MOBIL.Controller
                 comboBox_Gender.Text = "";
                 txt_Alamat.Clear();
                 txt_nikKtp.Clear();
+                txt_NoTelepon.Clear();
             } else
             {
                 MessageBox.Show("Data pelanggan tidak tersimpan", "informasi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -129,7 +138,7 @@ namespace RENTAL_MOBIL.Controller
 
         private void lvwDataPelanggan_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lvwDataPelanggan.SelectedItems.Count > 0)
+            if (IsDataSelected)
             {
                 ListViewItem selected = lvwDataPelanggan.SelectedItems[0];
 
@@ -139,6 +148,14 @@ namespace RENTAL_MOBIL.Controller
                 comboBox_Gender.Text = selected.SubItems[3].Text;
                 txt_Alamat.Text = selected.SubItems[4].Text;
                 txt_nikKtp.Text = selected.SubItems[5].Text;
+                txt_NoTelepon.Text = selected.SubItems[6].Text;
+                btn_editData.Enabled = true;
+
+
+            }
+            else {
+                btn_editData.Enabled = false;
+
             }
         }
 
@@ -150,21 +167,22 @@ namespace RENTAL_MOBIL.Controller
 
             lvwDataPelanggan.Columns.Add("No", 30, HorizontalAlignment.Center);
             lvwDataPelanggan.Columns.Add("ID", 80, HorizontalAlignment.Center);
-            lvwDataPelanggan.Columns.Add("Nama", 100, HorizontalAlignment.Center);
+            lvwDataPelanggan.Columns.Add("Nama", 160, HorizontalAlignment.Center);
             lvwDataPelanggan.Columns.Add("Gender", 80, HorizontalAlignment.Center);
             lvwDataPelanggan.Columns.Add("Alamat", 120, HorizontalAlignment.Center);
-            lvwDataPelanggan.Columns.Add("NIK KTP", 160, HorizontalAlignment.Center);
+            lvwDataPelanggan.Columns.Add("NIK KTP", 120, HorizontalAlignment.Center);
+            lvwDataPelanggan.Columns.Add("No Telepon", 120, HorizontalAlignment.Center);
         }
 
         private void btn_LoadDtPelanggan_Click(object sender, EventArgs e)
         {
             lvwDataPelanggan.Items.Clear();
-
+            btn_editData.Enabled = false;
             SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-D1LC3JE\SQLEXPRESS;Initial Catalog=Rental_mobil;Integrated Security=True");
 
             conn.Open();
 
-            string sql = @"SELECT Id_pelanggan, Nama_pelanggan,Gender,Alamat,Nik_ktp from Tbl_pelanggan order by Nama_pelanggan ASC ";
+            string sql = @"SELECT Id_pelanggan, Nama_pelanggan,Gender,Alamat,Nik_ktp,No_telepon from Tbl_pelanggan order by Nama_pelanggan ASC ";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -180,6 +198,7 @@ namespace RENTAL_MOBIL.Controller
                 item.SubItems.Add(dtr["Gender"].ToString());
                 item.SubItems.Add(dtr["Alamat"].ToString());
                 item.SubItems.Add(dtr["Nik_ktp"].ToString());
+                item.SubItems.Add(dtr["No_telepon"].ToString());
 
                 lvwDataPelanggan.Items.Add(item);
                 //lvwDataPelanggan.Items.Insert(0, item);
@@ -197,6 +216,7 @@ namespace RENTAL_MOBIL.Controller
             comboBox_Gender.Text = "";
             txt_Alamat.Clear();
             txt_nikKtp.Clear();
+            txt_NoTelepon.Clear();
         }
 
         private void btn_editData_Click(object sender, EventArgs e)
@@ -207,18 +227,22 @@ namespace RENTAL_MOBIL.Controller
 
             conn.Open();
 
-            string sql = @"UPDATE Tbl_Pelanggan set Nama_pelanggan = @Nama_pelanggan ,Gender = @Gender,Alamat = @Alamat ,Nik_ktp = @Nik_ktp where Id_pelanggan =@Id_pelanggan";
+            string sql = @"UPDATE Tbl_Pelanggan set Nama_pelanggan = @Nama_pelanggan ,Gender = @Gender,Alamat = @Alamat ,Nik_ktp = @Nik_ktp,No_telepon = @No_telepon where Id_pelanggan =@Id_pelanggan";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
+            btn_editData.Enabled = false;
+
+
             try
             {
-                // set parameter untuk nama, angkatan dan npm
+                
                 cmd.Parameters.AddWithValue(@"Id_pelanggan", txt_IdPelanggan.Text);
                 cmd.Parameters.AddWithValue(@"Nama_pelanggan", txt_NamaPelanggan.Text);
                 cmd.Parameters.AddWithValue(@"Gender", comboBox_Gender.Text);
                 cmd.Parameters.AddWithValue(@"Alamat", txt_Alamat.Text);
                 cmd.Parameters.AddWithValue(@"Nik_ktp", txt_nikKtp.Text);
+                cmd.Parameters.AddWithValue(@"No_telepon", Int64.Parse(txt_NoTelepon.Text));
 
                 result = cmd.ExecuteNonQuery();
             }
@@ -240,7 +264,8 @@ namespace RENTAL_MOBIL.Controller
                 txt_IdPelanggan.Clear();
                 comboBox_Gender.Text = "";
                 txt_Alamat.Clear();
-                txt_nikKtp.Clear(); ;
+                txt_nikKtp.Clear(); 
+                txt_NoTelepon.Clear();
             }
             else
                 MessageBox.Show("Data mahasiswa gagal diupdate !!!", "Informasi",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
@@ -272,8 +297,9 @@ namespace RENTAL_MOBIL.Controller
                         cmd.Parameters.AddWithValue(@"Gender", comboBox_Gender.Text);
                         cmd.Parameters.AddWithValue(@"Alamat", txt_Alamat.Text);
                         cmd.Parameters.AddWithValue(@"Nik_ktp", txt_nikKtp.Text);
+                        //cmd.Parameters.AddWithValue(@"Nik_ktp", int.Parse(txt_NoTelepon.Text));
 
-                        result = cmd.ExecuteNonQuery();
+                    result = cmd.ExecuteNonQuery();
                     }
                     catch (Exception ex)
                     {
@@ -294,6 +320,7 @@ namespace RENTAL_MOBIL.Controller
                         comboBox_Gender.Text = "";
                         txt_Alamat.Clear();
                         txt_nikKtp.Clear();
+                        txt_NoTelepon.Clear();
                     }
                     else
                     {
@@ -307,5 +334,12 @@ namespace RENTAL_MOBIL.Controller
                     // Jika pengguna memilih 'No', tidak melakukan apa-apa
                 }
         }
+
+        //btn edit 
+        private bool IsDataSelected
+        {
+            get { return lvwDataPelanggan.SelectedItems.Count > 0; }
+        }
+
     }
 }

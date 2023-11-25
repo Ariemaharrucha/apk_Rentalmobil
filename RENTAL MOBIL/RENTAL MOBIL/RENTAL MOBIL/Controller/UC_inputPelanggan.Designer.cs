@@ -45,6 +45,8 @@
             this.lbl_gender = new System.Windows.Forms.Label();
             this.lbl_idPelanggan = new System.Windows.Forms.Label();
             this.lbl_namaPelanggan = new System.Windows.Forms.Label();
+            this.lbl_NoTlpn = new System.Windows.Forms.Label();
+            this.txt_NoTelepon = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +54,8 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txt_NoTelepon);
+            this.panel1.Controls.Add(this.lbl_NoTlpn);
             this.panel1.Controls.Add(this.btn_DeletePelanggan);
             this.panel1.Controls.Add(this.btn_Cancel);
             this.panel1.Controls.Add(this.lvwDataPelanggan);
@@ -71,7 +75,7 @@
             this.panel1.Location = new System.Drawing.Point(33, 17);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.panel1.Size = new System.Drawing.Size(627, 627);
+            this.panel1.Size = new System.Drawing.Size(627, 692);
             this.panel1.TabIndex = 0;
             // 
             // btn_DeletePelanggan
@@ -82,7 +86,7 @@
             this.btn_DeletePelanggan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DeletePelanggan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DeletePelanggan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_DeletePelanggan.Location = new System.Drawing.Point(253, 293);
+            this.btn_DeletePelanggan.Location = new System.Drawing.Point(252, 337);
             this.btn_DeletePelanggan.Name = "btn_DeletePelanggan";
             this.btn_DeletePelanggan.Size = new System.Drawing.Size(97, 42);
             this.btn_DeletePelanggan.TabIndex = 18;
@@ -98,7 +102,7 @@
             this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Cancel.Location = new System.Drawing.Point(141, 293);
+            this.btn_Cancel.Location = new System.Drawing.Point(141, 337);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(93, 42);
             this.btn_Cancel.TabIndex = 17;
@@ -109,7 +113,7 @@
             // lvwDataPelanggan
             // 
             this.lvwDataPelanggan.HideSelection = false;
-            this.lvwDataPelanggan.Location = new System.Drawing.Point(24, 353);
+            this.lvwDataPelanggan.Location = new System.Drawing.Point(27, 407);
             this.lvwDataPelanggan.Name = "lvwDataPelanggan";
             this.lvwDataPelanggan.Size = new System.Drawing.Size(576, 258);
             this.lvwDataPelanggan.TabIndex = 16;
@@ -124,7 +128,7 @@
             this.btn_LoadDtPelanggan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_LoadDtPelanggan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_LoadDtPelanggan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_LoadDtPelanggan.Location = new System.Drawing.Point(24, 293);
+            this.btn_LoadDtPelanggan.Location = new System.Drawing.Point(24, 337);
             this.btn_LoadDtPelanggan.Name = "btn_LoadDtPelanggan";
             this.btn_LoadDtPelanggan.Size = new System.Drawing.Size(99, 42);
             this.btn_LoadDtPelanggan.TabIndex = 14;
@@ -151,7 +155,7 @@
             this.btn_saveData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_saveData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_saveData.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btn_saveData.Location = new System.Drawing.Point(499, 293);
+            this.btn_saveData.Location = new System.Drawing.Point(502, 337);
             this.btn_saveData.Name = "btn_saveData";
             this.btn_saveData.Size = new System.Drawing.Size(101, 42);
             this.btn_saveData.TabIndex = 14;
@@ -167,7 +171,7 @@
             this.btn_editData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_editData.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_editData.ForeColor = System.Drawing.Color.White;
-            this.btn_editData.Location = new System.Drawing.Point(373, 293);
+            this.btn_editData.Location = new System.Drawing.Point(371, 337);
             this.btn_editData.Name = "btn_editData";
             this.btn_editData.Size = new System.Drawing.Size(106, 42);
             this.btn_editData.TabIndex = 13;
@@ -262,16 +266,36 @@
             this.lbl_namaPelanggan.TabIndex = 0;
             this.lbl_namaPelanggan.Text = "Nama Pelanggan";
             // 
+            // lbl_NoTlpn
+            // 
+            this.lbl_NoTlpn.AutoSize = true;
+            this.lbl_NoTlpn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NoTlpn.Location = new System.Drawing.Point(23, 284);
+            this.lbl_NoTlpn.Name = "lbl_NoTlpn";
+            this.lbl_NoTlpn.Size = new System.Drawing.Size(94, 21);
+            this.lbl_NoTlpn.TabIndex = 19;
+            this.lbl_NoTlpn.Text = "No Telepon";
+            // 
+            // txt_NoTelepon
+            // 
+            this.txt_NoTelepon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NoTelepon.Location = new System.Drawing.Point(186, 282);
+            this.txt_NoTelepon.Multiline = true;
+            this.txt_NoTelepon.Name = "txt_NoTelepon";
+            this.txt_NoTelepon.Size = new System.Drawing.Size(385, 27);
+            this.txt_NoTelepon.TabIndex = 20;
+            
+            // 
             // UC_inputPelanggan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.AutoScrollMinSize = new System.Drawing.Size(0, 672);
+            this.AutoScrollMinSize = new System.Drawing.Size(0, 750);
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.panel1);
             this.Name = "UC_inputPelanggan";
-            this.Size = new System.Drawing.Size(642, 595);
+            this.Size = new System.Drawing.Size(682, 610);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -297,5 +321,7 @@
         private System.Windows.Forms.Button btn_LoadDtPelanggan;
         private System.Windows.Forms.Button btn_DeletePelanggan;
         private System.Windows.Forms.Button btn_Cancel;
+        private System.Windows.Forms.TextBox txt_NoTelepon;
+        private System.Windows.Forms.Label lbl_NoTlpn;
     }
 }

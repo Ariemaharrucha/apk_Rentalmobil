@@ -18,6 +18,8 @@ namespace RENTAL_MOBIL.Controller
             InitializeComponent();
             DataMobilListView();
             Lvw_dataMobil.SelectedIndexChanged += Lvw_dataMobil_SelectedIndexChanged;
+
+            btn_editDataMbl.Enabled = false;
         }
 
         private void btn_saveData_Click(object sender, EventArgs e)
@@ -109,7 +111,6 @@ namespace RENTAL_MOBIL.Controller
         private void txt_IdMobil_Click(object sender, EventArgs e)
         {
             string randomID = GenerateRandomID();
-
             txt_IdMobil.Text = randomID;
         }
 
@@ -139,7 +140,7 @@ namespace RENTAL_MOBIL.Controller
         private void btn_LoadDtmobil_Click(object sender, EventArgs e)
         {
             Lvw_dataMobil.Items.Clear();
-
+            btn_editDataMbl.Enabled = false;
             SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-D1LC3JE\SQLEXPRESS;Initial Catalog=Rental_mobil;Integrated Security=True");
             conn.Open();
             string sql = @"SELECT Id_mobil, Plat_nomer,Merek,Harga_sewa,Warna from Tbl_mobil order by Id_mobil";
@@ -228,9 +229,9 @@ namespace RENTAL_MOBIL.Controller
         //agar tampil di form
         private void Lvw_dataMobil_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("ID mobil tidak Dapat di edit !", "informasi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //MessageBox.Show("ID mobil tidak Dapat di edit !", "informasi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-            if (Lvw_dataMobil.SelectedItems.Count > 0)
+            if (IsDataSelected)
             {
                 ListViewItem selected = Lvw_dataMobil.SelectedItems[0];
 
@@ -241,7 +242,12 @@ namespace RENTAL_MOBIL.Controller
                 txt_Warna.Text = selected.SubItems[4].Text;
                 txt_HargaSewa.Text = selected.SubItems[5].Text;
                 //int.Parse(txt_HargaSewa.Text))
+
+                btn_editDataMbl.Enabled = true;
                 
+            } else
+            {
+                btn_editDataMbl.Enabled = false;
             }
         }
 
@@ -301,6 +307,7 @@ namespace RENTAL_MOBIL.Controller
             string sql = @"UPDATE Tbl_mobil set Merek = @Merek ,Plat_nomer = @Plat_nomer,Warna = @Warna ,Harga_sewa = @Harga_sewa where Id_mobil =@Id_mobil";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
+            btn_editDataMbl.Enabled = false;
 
             try
             {
@@ -340,5 +347,10 @@ namespace RENTAL_MOBIL.Controller
             conn.Dispose();
         }
 
+
+        private bool IsDataSelected
+        {
+            get { return Lvw_dataMobil.SelectedItems.Count > 0; }
+        }
     }
 }

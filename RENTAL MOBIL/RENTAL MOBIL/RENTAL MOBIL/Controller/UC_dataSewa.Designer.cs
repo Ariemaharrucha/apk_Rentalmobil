@@ -32,22 +32,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btn_Hitung = new System.Windows.Forms.Button();
-            this.lbl_Hari = new System.Windows.Forms.Label();
-            this.txt_LamaHari = new System.Windows.Forms.TextBox();
-            this.dateTime_MulaiSewa = new System.Windows.Forms.DateTimePicker();
-            this.txt_IdTransaksi = new System.Windows.Forms.TextBox();
-            this.lbl_LamaSewa = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.lbl_IdKaryawan = new System.Windows.Forms.Label();
-            this.lblTransaksi = new System.Windows.Forms.Label();
-            this.txt_IdKaryawan = new System.Windows.Forms.TextBox();
+            this.dateTime_SelesaiSewa = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btn_Hitung = new System.Windows.Forms.Button();
+            this.dateTime_MulaiSewa = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_IdTransaksi = new System.Windows.Forms.TextBox();
+            this.txt_TotalSewa = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_Id = new System.Windows.Forms.Label();
+            this.lblPenyewaan = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.lblDataMobil = new System.Windows.Forms.Label();
             this.lblDataPelanggan = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btn_simpan = new System.Windows.Forms.Button();
             this.Lvw_ricianSewa = new System.Windows.Forms.ListView();
             this.lbl_Rincian = new System.Windows.Forms.Label();
@@ -76,6 +75,7 @@
             // 
             // txtNamaPelanggan
             // 
+            this.txtNamaPelanggan.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.txtNamaPelanggan.Location = new System.Drawing.Point(117, 57);
             this.txtNamaPelanggan.Multiline = true;
             this.txtNamaPelanggan.Name = "txtNamaPelanggan";
@@ -111,24 +111,51 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.lbl_IdKaryawan);
+            this.panel4.Controls.Add(this.dateTime_SelesaiSewa);
+            this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.btn_Hitung);
-            this.panel4.Controls.Add(this.lbl_Hari);
-            this.panel4.Controls.Add(this.txt_LamaHari);
             this.panel4.Controls.Add(this.dateTime_MulaiSewa);
-            this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.txt_IdTransaksi);
-            this.panel4.Controls.Add(this.textBox6);
-            this.panel4.Controls.Add(this.lbl_LamaSewa);
+            this.panel4.Controls.Add(this.txt_TotalSewa);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.lbl_IdKaryawan);
-            this.panel4.Controls.Add(this.lblTransaksi);
-            this.panel4.Controls.Add(this.txt_IdKaryawan);
+            this.panel4.Controls.Add(this.lbl_Id);
+            this.panel4.Controls.Add(this.lblPenyewaan);
+            this.panel4.Controls.Add(this.panel5);
             this.panel4.Location = new System.Drawing.Point(18, 247);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(404, 247);
+            this.panel4.Size = new System.Drawing.Size(422, 247);
             this.panel4.TabIndex = 29;
+            // 
+            // lbl_IdKaryawan
+            // 
+            this.lbl_IdKaryawan.AutoSize = true;
+            this.lbl_IdKaryawan.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_IdKaryawan.Location = new System.Drawing.Point(178, 60);
+            this.lbl_IdKaryawan.Name = "lbl_IdKaryawan";
+            this.lbl_IdKaryawan.Size = new System.Drawing.Size(51, 20);
+            this.lbl_IdKaryawan.TabIndex = 33;
+            this.lbl_IdKaryawan.Text = "label4";
+            
+            // 
+            // dateTime_SelesaiSewa
+            // 
+            this.dateTime_SelesaiSewa.Location = new System.Drawing.Point(182, 139);
+            this.dateTime_SelesaiSewa.Name = "dateTime_SelesaiSewa";
+            this.dateTime_SelesaiSewa.Size = new System.Drawing.Size(131, 20);
+            this.dateTime_SelesaiSewa.TabIndex = 32;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(8, 140);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(152, 20);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "Tanggal Selesai Sewa";
             // 
             // btn_Hitung
             // 
@@ -144,49 +171,44 @@
             this.btn_Hitung.TabIndex = 30;
             this.btn_Hitung.Text = "Hitung";
             this.btn_Hitung.UseVisualStyleBackColor = false;
-            // 
-            // lbl_Hari
-            // 
-            this.lbl_Hari.AutoSize = true;
-            this.lbl_Hari.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Hari.Location = new System.Drawing.Point(218, 146);
-            this.lbl_Hari.Name = "lbl_Hari";
-            this.lbl_Hari.Size = new System.Drawing.Size(33, 17);
-            this.lbl_Hari.TabIndex = 32;
-            this.lbl_Hari.Text = "Hari";
-            // 
-            // txt_LamaHari
-            // 
-            this.txt_LamaHari.Location = new System.Drawing.Point(169, 139);
-            this.txt_LamaHari.Multiline = true;
-            this.txt_LamaHari.Name = "txt_LamaHari";
-            this.txt_LamaHari.Size = new System.Drawing.Size(43, 25);
-            this.txt_LamaHari.TabIndex = 31;
+            this.btn_Hitung.Click += new System.EventHandler(this.btn_Hitung_Click);
             // 
             // dateTime_MulaiSewa
             // 
-            this.dateTime_MulaiSewa.Location = new System.Drawing.Point(169, 99);
+            this.dateTime_MulaiSewa.Location = new System.Drawing.Point(182, 101);
             this.dateTime_MulaiSewa.Name = "dateTime_MulaiSewa";
             this.dateTime_MulaiSewa.Size = new System.Drawing.Size(131, 20);
             this.dateTime_MulaiSewa.TabIndex = 30;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(213, 204);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 17);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Rp . ";
+            // 
             // txt_IdTransaksi
             // 
+            this.txt_IdTransaksi.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_IdTransaksi.Location = new System.Drawing.Point(169, 20);
             this.txt_IdTransaksi.Multiline = true;
             this.txt_IdTransaksi.Name = "txt_IdTransaksi";
             this.txt_IdTransaksi.Size = new System.Drawing.Size(155, 25);
             this.txt_IdTransaksi.TabIndex = 29;
+            this.txt_IdTransaksi.Click += new System.EventHandler(this.txt_IdTransaksi_Click);
             // 
-            // lbl_LamaSewa
+            // txt_TotalSewa
             // 
-            this.lbl_LamaSewa.AutoSize = true;
-            this.lbl_LamaSewa.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lbl_LamaSewa.Location = new System.Drawing.Point(9, 142);
-            this.lbl_LamaSewa.Name = "lbl_LamaSewa";
-            this.lbl_LamaSewa.Size = new System.Drawing.Size(133, 20);
-            this.lbl_LamaSewa.TabIndex = 28;
-            this.lbl_LamaSewa.Text = "Lama Peminjaman";
+            this.txt_TotalSewa.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TotalSewa.Location = new System.Drawing.Point(256, 192);
+            this.txt_TotalSewa.Multiline = true;
+            this.txt_TotalSewa.Name = "txt_TotalSewa";
+            this.txt_TotalSewa.Size = new System.Drawing.Size(116, 29);
+            this.txt_TotalSewa.TabIndex = 21;
+            this.txt_TotalSewa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -198,33 +220,43 @@
             this.label7.TabIndex = 27;
             this.label7.Text = "Tanggal Mulai Sewa";
             // 
-            // lbl_IdKaryawan
+            // label2
             // 
-            this.lbl_IdKaryawan.AutoSize = true;
-            this.lbl_IdKaryawan.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lbl_IdKaryawan.Location = new System.Drawing.Point(7, 60);
-            this.lbl_IdKaryawan.Name = "lbl_IdKaryawan";
-            this.lbl_IdKaryawan.Size = new System.Drawing.Size(96, 20);
-            this.lbl_IdKaryawan.TabIndex = 26;
-            this.lbl_IdKaryawan.Text = "Id_Karyawan";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(165, 202);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 21);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Total ";
             // 
-            // lblTransaksi
+            // lbl_Id
             // 
-            this.lblTransaksi.AutoSize = true;
-            this.lblTransaksi.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
-            this.lblTransaksi.Location = new System.Drawing.Point(8, 23);
-            this.lblTransaksi.Name = "lblTransaksi";
-            this.lblTransaksi.Size = new System.Drawing.Size(100, 20);
-            this.lblTransaksi.TabIndex = 25;
-            this.lblTransaksi.Text = "ID Pelanggan";
+            this.lbl_Id.AutoSize = true;
+            this.lbl_Id.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lbl_Id.Location = new System.Drawing.Point(7, 60);
+            this.lbl_Id.Name = "lbl_Id";
+            this.lbl_Id.Size = new System.Drawing.Size(96, 20);
+            this.lbl_Id.TabIndex = 26;
+            this.lbl_Id.Text = "Id_Karyawan";
             // 
-            // txt_IdKaryawan
+            // lblPenyewaan
             // 
-            this.txt_IdKaryawan.Location = new System.Drawing.Point(169, 57);
-            this.txt_IdKaryawan.Multiline = true;
-            this.txt_IdKaryawan.Name = "txt_IdKaryawan";
-            this.txt_IdKaryawan.Size = new System.Drawing.Size(155, 25);
-            this.txt_IdKaryawan.TabIndex = 12;
+            this.lblPenyewaan.AutoSize = true;
+            this.lblPenyewaan.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblPenyewaan.Location = new System.Drawing.Point(8, 23);
+            this.lblPenyewaan.Name = "lblPenyewaan";
+            this.lblPenyewaan.Size = new System.Drawing.Size(105, 20);
+            this.lblPenyewaan.TabIndex = 25;
+            this.lblPenyewaan.Text = "ID Penyewaan";
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Location = new System.Drawing.Point(174, 58);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(146, 25);
+            this.panel5.TabIndex = 34;
             // 
             // lblDataMobil
             // 
@@ -245,44 +277,6 @@
             this.lblDataPelanggan.Size = new System.Drawing.Size(122, 21);
             this.lblDataPelanggan.TabIndex = 24;
             this.lblDataPelanggan.Text = "Data Pelanggan";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(307, 202);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 19);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "10000";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Yu Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(262, 203);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 17);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Rp . ";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(256, 192);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(116, 36);
-            this.textBox6.TabIndex = 21;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(198, 201);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 21);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Total ";
             // 
             // btn_simpan
             // 
@@ -306,18 +300,16 @@
             this.Lvw_ricianSewa.Size = new System.Drawing.Size(576, 75);
             this.Lvw_ricianSewa.TabIndex = 18;
             this.Lvw_ricianSewa.UseCompatibleStateImageBehavior = false;
-            this.Lvw_ricianSewa.SelectedIndexChanged += new System.EventHandler(this.Lvw_ricianSewa_SelectedIndexChanged);
             // 
             // lbl_Rincian
             // 
             this.lbl_Rincian.AutoSize = true;
             this.lbl_Rincian.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Rincian.Location = new System.Drawing.Point(482, 341);
+            this.lbl_Rincian.Location = new System.Drawing.Point(354, 598);
             this.lbl_Rincian.Name = "lbl_Rincian";
             this.lbl_Rincian.Size = new System.Drawing.Size(104, 21);
             this.lbl_Rincian.TabIndex = 8;
             this.lbl_Rincian.Text = "Rincian Sewa";
-            this.lbl_Rincian.Click += new System.EventHandler(this.lbl_Rincian_Click);
             // 
             // panel2
             // 
@@ -337,6 +329,7 @@
             // 
             // txt_NikKtp
             // 
+            this.txt_NikKtp.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.txt_NikKtp.Location = new System.Drawing.Point(117, 133);
             this.txt_NikKtp.Multiline = true;
             this.txt_NikKtp.Name = "txt_NikKtp";
@@ -345,6 +338,7 @@
             // 
             // txt_Notlpn
             // 
+            this.txt_Notlpn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.txt_Notlpn.Location = new System.Drawing.Point(117, 96);
             this.txt_Notlpn.Multiline = true;
             this.txt_Notlpn.Name = "txt_Notlpn";
@@ -353,6 +347,7 @@
             // 
             // txt_IdPelanggan
             // 
+            this.txt_IdPelanggan.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.txt_IdPelanggan.Location = new System.Drawing.Point(118, 20);
             this.txt_IdPelanggan.Multiline = true;
             this.txt_IdPelanggan.Name = "txt_IdPelanggan";
@@ -417,6 +412,7 @@
             // 
             // txt_Harga
             // 
+            this.txt_Harga.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.txt_Harga.Location = new System.Drawing.Point(126, 134);
             this.txt_Harga.Multiline = true;
             this.txt_Harga.Name = "txt_Harga";
@@ -425,6 +421,7 @@
             // 
             // txt_PlatNo
             // 
+            this.txt_PlatNo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.txt_PlatNo.Location = new System.Drawing.Point(126, 97);
             this.txt_PlatNo.Multiline = true;
             this.txt_PlatNo.Name = "txt_PlatNo";
@@ -433,6 +430,7 @@
             // 
             // txt_Merek
             // 
+            this.txt_Merek.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.txt_Merek.Location = new System.Drawing.Point(126, 57);
             this.txt_Merek.Multiline = true;
             this.txt_Merek.Name = "txt_Merek";
@@ -441,6 +439,7 @@
             // 
             // txt_IdMobil
             // 
+            this.txt_IdMobil.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.txt_IdMobil.Location = new System.Drawing.Point(126, 22);
             this.txt_IdMobil.Multiline = true;
             this.txt_IdMobil.Name = "txt_IdMobil";
@@ -491,11 +490,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(0, 672);
             this.AutoSize = true;
             this.Controls.Add(this.panel1);
             this.Name = "UC_dataSewa";
-            this.Size = new System.Drawing.Size(699, 658);
+            this.Size = new System.Drawing.Size(663, 641);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -516,9 +516,8 @@
         private System.Windows.Forms.ListView Lvw_ricianSewa;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_simpan;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txt_TotalSewa;
         private System.Windows.Forms.Label lblDataPelanggan;
         private System.Windows.Forms.Label lblDataMobil;
         private System.Windows.Forms.Panel panel2;
@@ -541,14 +540,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txt_IdTransaksi;
-        private System.Windows.Forms.Label lbl_LamaSewa;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lbl_IdKaryawan;
-        private System.Windows.Forms.Label lblTransaksi;
-        private System.Windows.Forms.TextBox txt_IdKaryawan;
+        private System.Windows.Forms.Label lbl_Id;
+        private System.Windows.Forms.Label lblPenyewaan;
         private System.Windows.Forms.DateTimePicker dateTime_MulaiSewa;
-        private System.Windows.Forms.TextBox txt_LamaHari;
-        private System.Windows.Forms.Label lbl_Hari;
         private System.Windows.Forms.Button btn_Hitung;
+        private System.Windows.Forms.DateTimePicker dateTime_SelesaiSewa;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_IdKaryawan;
+        private System.Windows.Forms.Panel panel5;
     }
 }
