@@ -1,0 +1,19 @@
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\bin\Debug\RENTAL MOBIL.exe.config
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\bin\Debug\RENTAL MOBIL.exe
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\bin\Debug\RENTAL MOBIL.pdb
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL MOBIL.csproj.AssemblyReference.cache
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL_MOBIL.Frm_login.resources
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL_MOBIL.Properties.Resources.resources
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL MOBIL.csproj.GenerateResource.cache
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL MOBIL.csproj.CoreCompileInputs.cache
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL MOBIL.exe
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL MOBIL.pdb
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\bin\Debug\System.Data.SQLite.dll
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\bin\Debug\System.Data.SQLite.xml
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL_MOBIL.View.Frm_menu.resources
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL MOBIL.csproj.CopyComplete
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL_MOBIL.Controller.UC_dataMobil.resources
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL_MOBIL.Controller.UC_inputPelanggan.resources
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL_MOBIL.Controller.UC_dataSewa.resources
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL_MOBIL.Controller.UC_dataPelanggan.resources
+D:\KULIAH\smt3\pemrograman lanjue\RENTAL MOBIL\RENTAL MOBIL\RENTAL MOBIL\obj\Debug\RENTAL_MOBIL.Controller.UC_inputDataMobil.resources
