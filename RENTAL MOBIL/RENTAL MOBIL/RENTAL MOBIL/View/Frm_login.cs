@@ -14,79 +14,71 @@ namespace RENTAL_MOBIL
 {
     public partial class Frm_login : Form
     {
+
         public Frm_login()
         {
              InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-D1LC3JE\SQLEXPRESS;Initial Catalog=Rental_mobil;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-MG9E6H7\SQLEXPRESS;Initial Catalog=Rental_mobil;Integrated Security=True");
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
+ 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           
             String username, user_password;
-
             username = txtNama.Text;
             user_password = txtPassword.Text;
 
             try
             {
-                string querry = "SELECT * FROM tbl_login WHERE username = '"+txtNama.Text+"' AND password = '"+txtPassword.Text+"'";
-                //string querry = "SELECT * FROM Tbl_login WHERE username = @username AND password = CONVERT(@password AS varchar(50))";
-                //SqlCommand cmd = new SqlCommand(querry,conn);
+                string query = "SELECT Id  FROM Tbl_LoginKaryawan WHERE username = @username AND password = @password";
 
-                //cmd.Parameters.AddWithValue("@username", txtNama.Text);
-                //cmd.Parameters.AddWithValue("@password", txtPassword.Text);
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@username", txtNama.Text);
+                cmd.Parameters.AddWithValue("@password", txtPassword.Text);
 
-                //SqlDataAdapter sda = new SqlDataAdapter(cmd);
-
-                SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
 
                 DataTable dtable = new DataTable();
                 sda.Fill(dtable);
-             
+
                 if (dtable.Rows.Count > 0)
                 {
-                    username = txtNama.Text;
-                    user_password = txtPassword.Text;
+                    string userId = Convert.ToString(dtable.Rows[0]["Id"]); 
 
-                    MessageBox.Show("berhasil login","Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Berhasil login", "Succes" , MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    Frm_menu fMenu = new Frm_menu();
-                    fMenu.Show();
                     this.Hide();
+                    Frm_menu fMenu = new Frm_menu(userId);
+                    fMenu.ShowDialog();
+                    this.Close();
                 }
-
                 else
                 {
-                    MessageBox.Show("user atau pass salah","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Username atau password salah", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtNama.Clear();
                     txtPassword.Clear();
-
-                    //to focus username
                     txtNama.Focus();
                 }
             }
-                 
-
-            catch (Exception ex) 
+            catch (Exception ex)
             {
-                MessageBox.Show("Error" + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
-
-            
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             txtNama.Clear();
             txtPassword.Clear();
-
             txtNama.Focus();    
         }
 

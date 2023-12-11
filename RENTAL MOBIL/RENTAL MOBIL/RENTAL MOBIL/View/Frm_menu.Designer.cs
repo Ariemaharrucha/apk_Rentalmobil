@@ -31,19 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_menu));
             this.btn_inputPelanggan = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_InputDataMbl = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_RentalMobil = new System.Windows.Forms.Label();
-            this.btnDatapelanggan = new System.Windows.Forms.Button();
+            this.btn_pengembalian = new System.Windows.Forms.Button();
             this.btnSewa = new System.Windows.Forms.Button();
-            this.btn_dataMobil = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_judul = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_inputPelanggan
@@ -55,7 +55,7 @@
             this.btn_inputPelanggan.ForeColor = System.Drawing.Color.White;
             this.btn_inputPelanggan.Image = ((System.Drawing.Image)(resources.GetObject("btn_inputPelanggan.Image")));
             this.btn_inputPelanggan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_inputPelanggan.Location = new System.Drawing.Point(0, 91);
+            this.btn_inputPelanggan.Location = new System.Drawing.Point(0, 92);
             this.btn_inputPelanggan.Name = "btn_inputPelanggan";
             this.btn_inputPelanggan.Size = new System.Drawing.Size(192, 38);
             this.btn_inputPelanggan.TabIndex = 0;
@@ -67,16 +67,34 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel1.Controls.Add(this.btn_InputDataMbl);
             this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.btnDatapelanggan);
+            this.panel1.Controls.Add(this.btn_pengembalian);
             this.panel1.Controls.Add(this.btnSewa);
-            this.panel1.Controls.Add(this.btn_dataMobil);
             this.panel1.Controls.Add(this.btn_inputPelanggan);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(192, 607);
             this.panel1.TabIndex = 1;
+            // 
+            // btn_InputDataMbl
+            // 
+            this.btn_InputDataMbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_InputDataMbl.FlatAppearance.BorderSize = 0;
+            this.btn_InputDataMbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_InputDataMbl.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_InputDataMbl.ForeColor = System.Drawing.Color.White;
+            this.btn_InputDataMbl.Image = ((System.Drawing.Image)(resources.GetObject("btn_InputDataMbl.Image")));
+            this.btn_InputDataMbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_InputDataMbl.Location = new System.Drawing.Point(0, 135);
+            this.btn_InputDataMbl.Name = "btn_InputDataMbl";
+            this.btn_InputDataMbl.Size = new System.Drawing.Size(192, 38);
+            this.btn_InputDataMbl.TabIndex = 2;
+            this.btn_InputDataMbl.Text = "Data mobil";
+            this.btn_InputDataMbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_InputDataMbl.UseVisualStyleBackColor = false;
+            this.btn_InputDataMbl.Click += new System.EventHandler(this.btn_InputDataMbl_Click);
             // 
             // panel4
             // 
@@ -87,6 +105,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(192, 67);
             this.panel4.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 30);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // lbl_RentalMobil
             // 
@@ -99,22 +127,22 @@
             this.lbl_RentalMobil.TabIndex = 0;
             this.lbl_RentalMobil.Text = "Rental Mobil";
             // 
-            // btnDatapelanggan
+            // btn_pengembalian
             // 
-            this.btnDatapelanggan.FlatAppearance.BorderSize = 0;
-            this.btnDatapelanggan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatapelanggan.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatapelanggan.ForeColor = System.Drawing.Color.White;
-            this.btnDatapelanggan.Image = ((System.Drawing.Image)(resources.GetObject("btnDatapelanggan.Image")));
-            this.btnDatapelanggan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDatapelanggan.Location = new System.Drawing.Point(0, 224);
-            this.btnDatapelanggan.Name = "btnDatapelanggan";
-            this.btnDatapelanggan.Size = new System.Drawing.Size(192, 38);
-            this.btnDatapelanggan.TabIndex = 3;
-            this.btnDatapelanggan.Text = "Data pelanggan";
-            this.btnDatapelanggan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDatapelanggan.UseVisualStyleBackColor = true;
-            this.btnDatapelanggan.Click += new System.EventHandler(this.btnDatapelanggan_Click);
+            this.btn_pengembalian.FlatAppearance.BorderSize = 0;
+            this.btn_pengembalian.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pengembalian.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pengembalian.ForeColor = System.Drawing.Color.White;
+            this.btn_pengembalian.Image = ((System.Drawing.Image)(resources.GetObject("btn_pengembalian.Image")));
+            this.btn_pengembalian.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_pengembalian.Location = new System.Drawing.Point(0, 223);
+            this.btn_pengembalian.Name = "btn_pengembalian";
+            this.btn_pengembalian.Size = new System.Drawing.Size(192, 38);
+            this.btn_pengembalian.TabIndex = 3;
+            this.btn_pengembalian.Text = "Pengembalian";
+            this.btn_pengembalian.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_pengembalian.UseVisualStyleBackColor = true;
+            this.btn_pengembalian.Click += new System.EventHandler(this.btn_pengembalian_Click);
             // 
             // btnSewa
             // 
@@ -125,32 +153,14 @@
             this.btnSewa.ForeColor = System.Drawing.Color.White;
             this.btnSewa.Image = ((System.Drawing.Image)(resources.GetObject("btnSewa.Image")));
             this.btnSewa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSewa.Location = new System.Drawing.Point(0, 180);
+            this.btnSewa.Location = new System.Drawing.Point(0, 179);
             this.btnSewa.Name = "btnSewa";
             this.btnSewa.Size = new System.Drawing.Size(192, 38);
             this.btnSewa.TabIndex = 2;
-            this.btnSewa.Text = "Data Sewa ";
+            this.btnSewa.Text = "Sewa ";
             this.btnSewa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSewa.UseVisualStyleBackColor = false;
             this.btnSewa.Click += new System.EventHandler(this.btnSewa_Click);
-            // 
-            // btn_dataMobil
-            // 
-            this.btn_dataMobil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_dataMobil.FlatAppearance.BorderSize = 0;
-            this.btn_dataMobil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_dataMobil.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_dataMobil.ForeColor = System.Drawing.Color.White;
-            this.btn_dataMobil.Image = ((System.Drawing.Image)(resources.GetObject("btn_dataMobil.Image")));
-            this.btn_dataMobil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_dataMobil.Location = new System.Drawing.Point(0, 135);
-            this.btn_dataMobil.Name = "btn_dataMobil";
-            this.btn_dataMobil.Size = new System.Drawing.Size(192, 38);
-            this.btn_dataMobil.TabIndex = 1;
-            this.btn_dataMobil.Text = "Data mobil";
-            this.btn_dataMobil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_dataMobil.UseVisualStyleBackColor = false;
-            this.btn_dataMobil.Click += new System.EventHandler(this.btn_dataMobil_Click);
             // 
             // panel2
             // 
@@ -186,16 +196,6 @@
             this.panel3.Size = new System.Drawing.Size(699, 560);
             this.panel3.TabIndex = 3;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 30);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // Frm_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,9 +210,9 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,15 +222,15 @@
 
         private System.Windows.Forms.Button btn_inputPelanggan;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_dataMobil;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl_judul;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnSewa;
-        private System.Windows.Forms.Button btnDatapelanggan;
+        private System.Windows.Forms.Button btn_pengembalian;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lbl_RentalMobil;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_InputDataMbl;
         //private Controller.UC_dataMobil uC_DataMobil1;
         //private Controller.UC_inputPelanggan uC_InputPelanggan1;
     }

@@ -13,14 +13,25 @@ namespace RENTAL_MOBIL.View
 {
     public partial class Frm_menu : Form
     {
-        Controller.UC_inputPelanggan ucPelanggan = new Controller.UC_inputPelanggan();
-        Controller.UC_dataMobil ucDatamobil = new Controller.UC_dataMobil();
-        Controller.UC_dataSewa ucDatasewa = new Controller.UC_dataSewa();
-        Controller.UC_dataPelanggan ucDatapelanggan = new Controller.UC_dataPelanggan();
+        private string userId;
 
-        public Frm_menu()
+        Controller.UC_inputPelanggan ucPelanggan;
+        Controller.UC_dataSewa ucDatasewa;
+        Controller.UC_dataPelanggan ucDatapelanggan;
+        Controller.UC_inputDataMobil uc_InputDataMobil;
+        Controller.UC_Pengembalian uCPengembalian;
+
+        public Frm_menu(string userId)
         {
             InitializeComponent();
+            this.userId = userId;
+
+            ucPelanggan = new Controller.UC_inputPelanggan();
+            ucDatasewa = new Controller.UC_dataSewa(userId);
+            ucDatapelanggan = new Controller.UC_dataPelanggan();
+            uc_InputDataMobil = new Controller.UC_inputDataMobil();
+            uCPengembalian = new Controller.UC_Pengembalian();
+
             lbl_judul.Text = "Iput Pelanggan";
             panel3.Controls.Clear();
             panel3.Controls.Add(ucPelanggan);
@@ -28,29 +39,12 @@ namespace RENTAL_MOBIL.View
             //uC_DataMobil1.Visible = false;
             //uC_InputPelanggan1.Visible = false;
         }
-
-        /*private void addController (Controller controller)
-        {
-            panel3.Dock = DockStyle.Fill;
-            panel3.Controls.Clear();
-            panel3.Controls.Add(controller);
-        }*/
-
         
-
         private void btn_inputPelanggan_Click(object sender, EventArgs e)
         {
             lbl_judul.Text = "Iput Pelanggan";
             panel3.Controls.Clear();
             panel3.Controls.Add(ucPelanggan);
-            ucPelanggan.Dock = DockStyle.Fill;
-        }
-
-        private void btn_dataMobil_Click(object sender, EventArgs e)
-        {
-            lbl_judul.Text = "data mobil";
-            panel3.Controls.Clear();
-            panel3.Controls.Add(ucDatamobil);
             ucPelanggan.Dock = DockStyle.Fill;
         }
 
@@ -62,12 +56,22 @@ namespace RENTAL_MOBIL.View
             ucDatasewa.Dock = DockStyle.Fill;
         }
 
-        private void btnDatapelanggan_Click(object sender, EventArgs e)
+       
+
+        private void btn_InputDataMbl_Click(object sender, EventArgs e)
         {
-            lbl_judul.Text = "Data Pelanggan";
+            lbl_judul.Text = "iput Data mobil";
             panel3.Controls.Clear();
-            panel3.Controls.Add(ucDatapelanggan);
-            ucDatapelanggan.Dock = DockStyle.Fill;
+            panel3.Controls.Add(uc_InputDataMobil);
+            uc_InputDataMobil.Dock = DockStyle.Fill;
+        }
+
+        private void btn_pengembalian_Click(object sender, EventArgs e)
+        {
+            lbl_judul.Text = "Pengembalian mobil";
+            panel3.Controls.Clear();
+            panel3.Controls.Add(uCPengembalian);
+            uCPengembalian.Dock = DockStyle.Fill;
         }
     }
 }
