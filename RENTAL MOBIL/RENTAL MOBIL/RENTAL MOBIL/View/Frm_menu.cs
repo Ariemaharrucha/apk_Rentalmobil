@@ -15,22 +15,21 @@ namespace RENTAL_MOBIL.View
     {
         private string userId;
 
-        Controller.UC_inputPelanggan ucPelanggan;
-        Controller.UC_dataSewa ucDatasewa;
-        Controller.UC_dataPelanggan ucDatapelanggan;
-        Controller.UC_inputDataMobil uc_InputDataMobil;
-        Controller.UC_Pengembalian uCPengembalian;
+        UC_inputPelanggan ucPelanggan;
+        UC_dataSewa ucDatasewa;      
+        UC_inputDataMobil uc_InputDataMobil;
+        UC_Pengembalian uCPengembalian;
 
         public Frm_menu(string userId)
         {
             InitializeComponent();
             this.userId = userId;
 
-            ucPelanggan = new Controller.UC_inputPelanggan();
-            ucDatasewa = new Controller.UC_dataSewa(userId);
-            ucDatapelanggan = new Controller.UC_dataPelanggan();
-            uc_InputDataMobil = new Controller.UC_inputDataMobil();
-            uCPengembalian = new Controller.UC_Pengembalian();
+            ucPelanggan = new UC_inputPelanggan();
+            ucDatasewa = new UC_dataSewa(userId);
+            
+            uc_InputDataMobil = new UC_inputDataMobil();
+            uCPengembalian = new UC_Pengembalian();
 
             lbl_judul.Text = "Iput Pelanggan";
             panel3.Controls.Clear();
